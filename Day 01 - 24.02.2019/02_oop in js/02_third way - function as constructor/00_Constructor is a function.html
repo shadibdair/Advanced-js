@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script>
+        //A constructor is a function that is invoked via the new operator
+        function Person(name) {
+            this.name = name;
+        }
+
+        //The object in Person.prototype becomes the prototype of all instances of Person
+        Person.prototype.describe = function () {
+            console.log(`Person name: ${this.name}`);
+        };
+
+
+        var student1 = new Person('Bob');
+
+        student1.describe();  //--> Person name: Bob
+      
+        var test=Person("Tom");
+        console.log(test);    //--> undefiend
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

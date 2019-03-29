@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function Test(flag){
+            this.age=9;
+            return flag?3:{name:"Bob"};
+        }
+
+
+        let z1=new Test(true);
+        console.log(z1);  //--> Test {age: 9}
+
+        let z2=new Test(false);
+        console.log(z2);  //--> Object {name: "Bob"}
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

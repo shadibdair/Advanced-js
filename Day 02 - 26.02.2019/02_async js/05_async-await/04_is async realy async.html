@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script>
+        function f1(){
+            return "I am f1";
+        }
+
+
+        async function f2(){
+            let res=await new Promise((x,y)=>x("I am f2"))
+            return res;
+        }
+
+        console.log("--------------start-------------");
+
+        let x1=f1();
+        console.log("f1 returned", x1);
+
+        let x2=f2();
+        x2.then(y=>console.log("f2 returned",y))
+
+
+        console.log("--------------end-------------");
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

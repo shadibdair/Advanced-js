@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+        let cart = {};
+        function addItem() {
+            let newItem = prompt("Enter your new item");
+            cart[Symbol("item")] = newItem;
+            console.log(JSON.stringify(cart));
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="addItem()">click me to add item</button>
+</body>
+
+</html>

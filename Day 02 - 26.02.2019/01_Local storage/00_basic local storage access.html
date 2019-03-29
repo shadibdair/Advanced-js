@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    function setInfo(){
+        localStorage.setItem("name","bob");
+    }
+
+
+    function readInfo(){
+        let str=localStorage.getItem("name");
+        console.log(str);
+    }
+    </script>
+</head>
+<body>
+    <button onclick="setInfo()">set info</button>
+    <button onclick="readInfo()">read info</button>
+</body>
+</html>

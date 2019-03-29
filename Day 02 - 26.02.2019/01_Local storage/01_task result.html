@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+    
+    let uname,uage,ubdate, ucolor,res;
+    window.onload=()=>{
+        uname=document.getElementById("uname");
+        uage=document.getElementById("uage");
+        ubdate=document.getElementById("ubdate");
+        ucolor=document.getElementById("ucolor");
+        res=document.getElementById("res");
+        showUsers();
+    };
+
+
+    function readUsers(){
+        let res=localStorage.getItem("users");
+        return res?JSON.parse(res):[];
+    }
+
+    function showUsers(){
+        let str="";
+        for(let x of readUsers()){
+            str+=`<li style="color:${x.color}"> ${x.name} is ${x.age} yers old (born ${x.bdate})</li>`;
+        }
+        res.innerHTML=str;
+    }
+
+
+    function addUser(){
+        let newUser={
+            "name":uname.value,
+            "age":uage.value,
+            "bdate":ubdate.value,
+            "color":ucolor.value,
+        };
+        let arr=readUsers();
+        arr.push(newUser);
+        localStorage.setItem("users", JSON.stringify(arr));
+
+
+        uname.value="";
+        uage.value="";
+        ubdate.value="";
+        ucolor.value="";
+        showUsers();
+    }
+
+
+    </script>
+</head>
+<body>
+    <div>
+        <label>name</label>   <input id="uname"/>
+        <br/>
+
+        <label>age:</label>   <input id="uage"/>
+        <br/>
+
+        <label>birthedate:</label>   <input type="date" id="ubdate"/>
+        <br/>
+
+        <label>color:</label>   <input type="color" id="ucolor"/>
+        <br/>
+        <button onclick="addUser()">add user</button>
+    </div>
+
+
+    <ul id="res"></ul>
+</body>
+</html>

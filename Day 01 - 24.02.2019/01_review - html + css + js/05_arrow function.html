@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    var f1=()=>{console.log("I am f1")};
+    f1();  //--> I am f1
+
+    var f2=(num)=> {console.log("I am f2, and got: ", num)};
+    f2(5);  //--> I am f2, and got:  5
+
+    //----- RULE 1: if function gets only one param, we can remove the ()-------
+    var f3=num=> {console.log("I am f3, and got: ", num)};
+    f3(5);  //--> I am f3, and got:  5
+
+
+    var f4=num=> {return num*num;};
+    console.log(f4(5));  //--> 25
+
+    //----- RULE 2: if function has only one line in the body , and this line is return - we can remove the {return}-------
+    var f5=num=> num*num;
+    console.log(f5(5));  //--> 25
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

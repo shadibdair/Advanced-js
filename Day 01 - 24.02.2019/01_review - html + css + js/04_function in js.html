@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+    
+    function f1(){
+        console.log("I am f1");
+    }
+
+
+    f1();  //--> I am f1
+
+
+    var f2=function f3(val){
+        if(!val){
+            console.log("I am f2");
+            f3(true);
+        }
+        if(val)
+          console.log("I am f3");
+    };
+
+
+    f2();  //--> I am f2   I am f3
+    //f3();  //Uncaught ReferenceError: f3 is not defined
+
+
+    var f4=function(){
+        console.log("I am f4");
+    };
+
+    f4(); //--> I am f4
+
+
+    var f5=f1;
+
+    f5(); //--> I am f1
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
