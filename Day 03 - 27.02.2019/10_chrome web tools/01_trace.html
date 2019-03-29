@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function a() {
+            b();
+        }
+
+        function b() {
+            c();
+        }
+
+        function c() {
+            d();
+        }
+
+        function d() {
+            console.trace();
+        }
+
+
+      
+
+        d();
+        c();
+        a();
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

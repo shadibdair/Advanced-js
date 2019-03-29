@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+        function func() {
+            console.profile("test");
+            for (let i = 0; i < 10 ** 10; i++);
+            console.profileEnd("test");
+        }
+
+    </script>
+</head>
+
+<body>
+    <button onclick="func()">click me to test profile</button>
+</body>
+
+</html>
